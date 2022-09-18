@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  #Nodejs
+  node:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    # working_dir: /code
+    volumes:
+      - ./express-basic:/code
+      # - /code/node_modules
+    stdin_open: true
+    tty: true
+    ports:
+      - 8080:8080
+
